@@ -28,7 +28,7 @@ class BaseModel:
     def to_dict(self):
         """create a dic"""
 
-        self.__dict__ = {
+        obj_dict = {
                 'my_number': self.my_number,
                 'name': self.name,
                 '__class__': self.__class__.__name__,
@@ -36,7 +36,7 @@ class BaseModel:
                 'id': str(self.id),
                 'created_at': self.created_at
                 }
-        return self.__dict__
+        return obj_dict
 
     def __str__(self):
         """return the folowing format"""
