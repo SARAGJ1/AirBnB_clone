@@ -31,7 +31,7 @@ class BaseModel:
         self.__dict__ = {
                 'my_number': self.my_number,
                 'name': self.name,
-                '__class__': __class__.__name__,
+                '__class__': self.__class__.__name__,
                 'updated_at': self.updated_at,
                 'id': str(self.id),
                 'created_at': self.created_at
@@ -43,4 +43,5 @@ class BaseModel:
         if self.updated_at == None:
             self.updated_at = self.created_at
         self.id = str(self.id)
-        return ('[{}] ({}) {}'.format(__class__.__name__, self.id, self.__dict__))
+        return ('[{}] ({}) {}'.\
+                format(__class__.__name__, self.id, self.__dict__))
