@@ -23,7 +23,8 @@ class BaseModel:
         """Update the date of modification"""
 
         self.updated_at = datetime.datetime.now()
-        return self.updated_at
+        self.updated_at = self.updated_at.isoformat()
+        self.created_at = self.created_at.isoformat()
 
     def to_dict(self):
         """create a dic"""
