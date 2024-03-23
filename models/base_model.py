@@ -35,6 +35,7 @@ class BaseModel:
         self.__dict__ = {
                 'my_number': self.my_number,
                 'name': self.name,
+                '__class__': __class__.__name__,
                 'updated_at': self.updated_at,
                 'id': str(self.id),
                 'created_at': self.created_at
