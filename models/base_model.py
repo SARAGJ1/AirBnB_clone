@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This script is the base model"""
 
-
 import datetime
 import uuid
 
@@ -40,6 +39,7 @@ class BaseModel:
 
     def __str__(self):
         """return the folowing format"""
+
         if self.updated_at == None:
             self.updated_at = self.created_at
         self.id = str(self.id)
