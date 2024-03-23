@@ -17,7 +17,6 @@ class BaseModel:
         self.id = uuid.uuid4()
         self.created_at = datetime.datetime.now()
         self.updated_at = None
-        self.to_dict()
 
     def save(self):
         """Update the date of modification"""
@@ -28,9 +27,6 @@ class BaseModel:
 
     def to_dict(self):
         """create a dic"""
-
-        if self.updated_at == None:
-            self.updated_at = self.created_at
 
         self.__dict__ = {
                 'my_number': self.my_number,
@@ -44,5 +40,7 @@ class BaseModel:
 
     def __str__(self):
         """return the folowing format"""
-
+        if self.updated_at == None:
+            self.updated_at = self.created_at
+        self.id = str(self.id)
         return ('[{}] ({}) {}'.format(__class__.__name__, self.id, self.__dict__))
