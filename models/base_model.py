@@ -14,9 +14,9 @@ class BaseModel:
 
         self.my_number = my_number
         self.name = name
+        self.updated_at = None
         self.id = uuid.uuid4()
         self.created_at = datetime.datetime.now()
-        self.updated_at = None
 
     def save(self):
         """Update the date of modification"""
