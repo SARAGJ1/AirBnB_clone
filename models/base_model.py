@@ -20,6 +20,14 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.datetime.now()
 
+    def __str__(self):
+        """return the folowing format"""
+
+        if self.updated_at is None:
+            self.updated_at = self.created_at
+        return ('[{}] ({}) {}'.
+                format(type(self).__name__, self.id, self.__dict__))
+
     def save(self):
         """Update the date of modification"""
 
@@ -39,11 +47,3 @@ class BaseModel:
                 'created_at': self.created_at
                 }
         return obj_dict
-
-    def __str__(self):
-        """return the folowing format"""
-
-        if self.updated_at is None:
-            self.updated_at = self.created_at
-        return ('[{}] ({}) {}'.
-                format(type(self).__name__, self.id, self.__dict__))
