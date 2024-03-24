@@ -10,7 +10,7 @@ class BaseModel:
 
     def __init__(self, my_number='', name=''):
         """define Public instance attributes
-        
+
         Args:
             - my_number : argument num 1
             - name : argument num 2
@@ -23,7 +23,7 @@ class BaseModel:
         self.created_at = datetime.datetime.now()
 
     def __str__(self):
-        """return the folowing format"""
+        """Returns official string representation"""
 
         if self.updated_at is None:
             self.updated_at = self.created_at
@@ -32,12 +32,12 @@ class BaseModel:
                 format(type(self).__name__, self.id, self.__dict__))
 
     def save(self):
-        """Update the date of modification"""
+        """updates the public instance attribute updated_at"""
 
         self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
-        """create a dic"""
+        """returns a dictionary containing all keys/values of __dict__"""
 
         self.updated_at = self.updated_at.isoformat()
         self.created_at = self.created_at.isoformat()
