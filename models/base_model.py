@@ -14,6 +14,7 @@ class BaseModel:
             - my_number : argument num 1
             - name : argument num 2
         """
+
         self.my_number = my_number
         self.name = name
         self.updated_at = None
@@ -46,4 +47,4 @@ class BaseModel:
                 'id': str(self.id),
                 'created_at': self.created_at
                 }
-        return obj_dict
+        return (obj_dict)
