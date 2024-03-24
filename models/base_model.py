@@ -6,18 +6,14 @@ import uuid
 
 
 class BaseModel:
-    
     """class that defines all common attributes/methods for other classes"""
-
 
     def __init__(self, my_number='', name=''):
         """define Public instance attributes
-
         Args:
             - my_number : argument num 1
             - name : argument num 2
         """
-
         self.my_number = my_number
         self.name = name
         self.updated_at = None
