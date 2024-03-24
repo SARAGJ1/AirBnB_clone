@@ -10,6 +10,7 @@ class BaseModel:
 
     def __init__(self, my_number='', name=''):
         """define Public instance attributes
+        
         Args:
             - my_number : argument num 1
             - name : argument num 2
@@ -26,7 +27,7 @@ class BaseModel:
 
         if self.updated_at is None:
             self.updated_at = self.created_at
-        
+
         return ('[{}] ({}) {}'.
                 format(type(self).__name__, self.id, self.__dict__))
 
@@ -48,5 +49,5 @@ class BaseModel:
                 'id': str(self.id),
                 'created_at': self.created_at
                 }
-        
+
         return (obj_dict)
