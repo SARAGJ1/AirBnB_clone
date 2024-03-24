@@ -43,6 +43,5 @@ class BaseModel:
 
         if self.updated_at is None:
             self.updated_at = self.created_at
-        self.id = str(self.id)
         return ('[{}] ({}) {}'.
-                format(type(self).__name__, self.id, self.__dict__))
+                format(type(self).__name__, str(self.id), self.__dict__))
