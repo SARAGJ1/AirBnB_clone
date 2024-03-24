@@ -14,7 +14,7 @@ class BaseModel:
 
         self.my_number = my_number
         self.name = name
-        self.updated_at = None
+        self.updated_at = ''
         self.id = uuid.uuid4()
         self.created_at = datetime.datetime.now()
 
@@ -41,7 +41,7 @@ class BaseModel:
     def __str__(self):
         """return the folowing format"""
 
-        if self.updated_at is None:
+        if self.updated_at = '':
             self.updated_at = self.created_at
         return ('[{}] ({}) {}'.
                 format(type(self).__name__, str(self.id), self.__dict__))
