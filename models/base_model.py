@@ -30,7 +30,7 @@ class BaseModel:
         obj_dict = {
                 'my_number': self.my_number,
                 'name': self.name,
-                '__class__': self.__class__.__name__,
+                '__class__': type(self).__name__,
                 'updated_at': self.updated_at,
                 'id': str(self.id),
                 'created_at': self.created_at
@@ -44,4 +44,4 @@ class BaseModel:
             self.updated_at = self.created_at
         self.id = str(self.id)
         return ('[{}] ({}) {}'.\
-                format(self.__class__.__name__, self.id, self.__dict__))
+                format(type(self).__name__, self.id, self.__dict__))
